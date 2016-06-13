@@ -7,6 +7,10 @@ body {
     padding: 2em 0;
 }
 
+.cell .header-img {
+    width: 100%;
+}
+
 .cell .page_title {
     color: #225fba;
 }
@@ -21,4 +25,9 @@ body {
 
 .cell .fa-star {
 	color: #e28181;
+}
+
+.weui_check_label .weui_cell_bd p {
+    font-size: 15px;
+    color: #777;
 }

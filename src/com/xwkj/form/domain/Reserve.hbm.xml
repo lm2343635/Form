@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xwkj.form.domain">
+	<class name="Reserve" table="reserve">
+		<id name="rid" type="string">
+			<generator class="uuid"/>
+		</id>
+		<property name="name" type="string"/>
+		<property name="telephone" type="string"/>
+		<property name="address" type="string"/>
+		<property name="service" type="string"/>
+		<property name="area" type="integer"/>
+		<property name="user" type="string"/>
+		<property name="number" type="integer"/>
+		<property name="createDate" type="java.util.Date" not-null="true"/>
+	</class>
+</hibernate-mapping>
