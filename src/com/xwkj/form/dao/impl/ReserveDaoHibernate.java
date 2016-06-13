@@ -8,6 +8,11 @@ import com.xwkj.form.domain.Reserve;
 
 public class ReserveDaoHibernate extends PageHibernateDaoSupport<Reserve> implements ReserveDao {
 
+	public ReserveDaoHibernate() {
+		super();
+		setClass(Reserve.class);
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Reserve> find() {

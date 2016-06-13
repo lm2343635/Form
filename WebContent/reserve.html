@@ -7,6 +7,10 @@
 		<link href="static/css/weui.min.css" rel="stylesheet">
 		<link href="static/css/font-awesome.min.css" rel="stylesheet">
 		<link href="static/css/style.css" rel="stylesheet">
+		<script src="static/js/jquery.min.js"></script>
+		<script src="dwr/engine.js" ></script>
+        <script src="dwr/interface/ReserveManager.js"></script>
+		<script src="static/js/reserve.js"></script>
 	</head>
 	<body>
 		<div class="container" id="container">
@@ -19,7 +23,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="text">
+			                <input id="reserve-name" class="weui_input" type="text">
 			            </div>
 			        </div>
 			    </div>
@@ -27,7 +31,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="number" pattern="[0-9]*">
+			                <input id="reserve-telephone" class="weui_input" type="number" pattern="[0-9]*">
 			            </div>
 			        </div>
 			    </div>
@@ -35,7 +39,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="text">
+			                <input id="reserve-address" class="weui_input" type="text">
 			            </div>
 			        </div>
 			    </div>
@@ -46,7 +50,7 @@
 			                <p>单点净水直饮水</p>
 			            </div>
 			            <div class="weui_cell_ft">
-			                <input id="reserve-service-1" class="weui_check" name="reserve-service" type="radio" checked="checked">
+			                <input id="reserve-service-1" class="weui_check" name="reserve-service" type="radio" value="单点净水直饮水" checked="checked">
 			                <span class="weui_icon_checked"></span>
 			            </div>
 			        </label>
@@ -55,7 +59,7 @@
 			                <p>全屋净化直饮水</p>
 			            </div>
 			            <div class="weui_cell_ft">
-			                <input id="reserve-service-2" class="weui_check" name="reserve-service" type="radio">
+			                <input id="reserve-service-2" class="weui_check" name="reserve-service" value="全屋净化直饮水" type="radio">
 			                <span class="weui_icon_checked"></span>
 			            </div>
 			        </label>
@@ -64,7 +68,7 @@
 			                <p>集中净化直饮水</p>
 			            </div>
 			            <div class="weui_cell_ft">
-			                <input id="reserve-service-3" class="weui_check" name="reserve-service" type="radio">
+			                <input id="reserve-service-3" class="weui_check" name="reserve-service" value="集中净化直饮水" type="radio">
 			                <span class="weui_icon_checked"></span>
 			            </div>
 			        </label>
@@ -73,7 +77,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="number">
+			                <input id="reserve-area" class="weui_input" type="number">
 			            </div>
 			        </div>
 			    </div>
@@ -84,7 +88,7 @@
 			                <p>业主</p>
 			            </div>
 			            <div class="weui_cell_ft">
-			                <input id="reserve-user-1" class="weui_check" name="reserve-user" type="radio" checked="checked">
+			                <input id="reserve-user-1" class="weui_check" name="reserve-user" type="radio" value="业主" checked="checked">
 			                <span class="weui_icon_checked"></span>
 			            </div>
 			        </label>
@@ -93,7 +97,7 @@
 			                <p>租户</p>
 			            </div>
 			            <div class="weui_cell_ft">
-			                <input id="reserve-user-2" class="weui_check" name="reserve-user" type="radio">
+			                <input id="reserve-user-2" class="weui_check" name="reserve-user" value="租户" type="radio">
 			                <span class="weui_icon_checked"></span>
 			            </div>
 			        </label>
@@ -102,12 +106,12 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="number" pattern="[0-9]*">
+			                <input id="reserve-number" class="weui_input" type="number" pattern="[0-9]*">
 			            </div>
 			        </div>
 			    </div>
 			    <div class="weui_btn_area">
-			        <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">确定</a>
+			        <button id="reserve-submit" class="weui_btn weui_btn_primary">确定</button>
 			    </div>
 			</div>
 		</div>

@@ -4,8 +4,20 @@
 	"http://getahead.org/dwr/dwr30.dtd">
 <dwr>
 	<allow>
-		<create creator="spring" javascript="TranslateManager"> 
-			<param name="beanName" value="tranlateManager"/>
+		<create creator="spring" javascript="FeedbackManager"> 
+			<param name="beanName" value="feedbackManager"/>
 		</create>
+		<create creator="spring" javascript="ReserveManager"> 
+			<param name="beanName" value="reserveManager"/>
+		</create>
+		<create creator="spring" javascript="AdminManager"> 
+			<param name="beanName" value="adminManager"/>
+		</create>
+		
+		<convert converter="bean" match="com.xwkj.form.domain.Feedback"/>
+		<convert converter="bean" match="com.xwkj.form.domain.Reserve"/>
+		
+		<convert converter="exception" match="java.lang.Exception"/>
+		<convert converter="exception" match="java.lang.StackTraceElement"/>
 	</allow>
 </dwr>

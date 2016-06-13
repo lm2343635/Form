@@ -57,19 +57,16 @@ public abstract class PageHibernateDaoSupport<T extends Serializable> extends Hi
 	 * @return 当前页的所有记录
 	 */
 	@SuppressWarnings("rawtypes")
-	public List findByPage(final String hql,final int offset,final int pageSize)
-	{
+	public List findByPage(final String hql,final int offset,final int pageSize) {
 		List list=getHibernateTemplate().executeFind(new HibernateCallback() {
 			@Override
-			public Object doInHibernate(Session session) throws HibernateException, SQLException 
-			{
+			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				List result=session.createQuery(hql)
 						.setFirstResult(offset)
 						.setMaxResults(pageSize)
 						.list();
 				return result;
 			}
-			
 		});
 		return list;
 	}
@@ -83,14 +80,11 @@ public abstract class PageHibernateDaoSupport<T extends Serializable> extends Hi
 	 * @return 当前页的所有记录
 	 */
 	@SuppressWarnings("rawtypes")
-	public List findByPage(final String hql , final Object value ,final int offset, final int pageSize)
-	{
+	public List findByPage(final String hql , final Object value ,final int offset, final int pageSize) {
 		//通过一个HibernateCallback对象来执行查询
-		List list = getHibernateTemplate().executeFind(new HibernateCallback()
-		{
+		List list = getHibernateTemplate().executeFind(new HibernateCallback() {
 			//实现HibernateCallback接口必须实现的方法
-			public Object doInHibernate(Session session) throws HibernateException, SQLException
-			{
+			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				//执行Hibernate分页查询
 				List result = session.createQuery(hql)
 					//为hql语句传入参数
@@ -113,19 +107,15 @@ public abstract class PageHibernateDaoSupport<T extends Serializable> extends Hi
 	 * @return 当前页的所有记录
 	 */
 	@SuppressWarnings("rawtypes")
-	public List findByPage(final String hql, final Object[] values,final int offset, final int pageSize)
-	{
+	public List findByPage(final String hql, final Object[] values,final int offset, final int pageSize) {
 		//通过一个HibernateCallback对象来执行查询
-		List list = getHibernateTemplate().executeFind(new HibernateCallback()
-		{
+		List list = getHibernateTemplate().executeFind(new HibernateCallback() {
 			//实现HibernateCallback接口必须实现的方法
-			public Object doInHibernate(Session session) throws HibernateException, SQLException
-			{
+			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				//执行Hibernate分页查询
 				Query query = session.createQuery(hql);
 				//为hql语句传入参数
-				for (int i = 0 ; i < values.length ; i++)
-				{
+				for (int i = 0 ; i < values.length ; i++) {
 					query.setParameter( i, values[i]);
 				}
 				List result = query.setFirstResult(offset)

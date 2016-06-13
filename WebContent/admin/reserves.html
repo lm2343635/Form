@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>服务预约</title>
+        <link href="../static/images/favicon.ico" type="image/x-icon" rel="icon"> 
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../static/css/mengular.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/jquery.bootstrap.min.js"></script>
+        <script src="../static/js/mengular.js"></script>
+        <script src="../static/js/tools.js"></script>
+        <script src="../dwr/engine.js"></script>
+        <script src="../dwr/interface/AdminManager.js"></script>
+        <script src="../dwr/interface/ReserveManager.js"></script>
+        <script src="../static/js/reserves.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed glyphicon glyphicon-th-list" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+                        <a class="navbar-brand" href="#">管理员</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav logined-btn">
+                            <li><a href="feedbacks.html">反馈投诉</a></li>
+                            <li class="active"><a href="reserves.html">服务预约</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../LogoutServlet?task=adminLogout">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id="reserves-panel" class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">服务预约列表</h1>
+                </div>
+                <div id="list-loading" style="display: none;">
+                    <h1 class="text-center text-primary"><i class="fa fa-spin fa-spinner"></i></h1>
+                    <h2 class="text-center text-primary">正在加载...</h2>
+                </div>
+                <table id="reserve-list" class="table">
+                    <thead>
+                        <tr>
+                            <th>提交时间</th>
+                            <th>用户姓名</th>
+                            <th>手机号码</th>
+                            <th>用户住址</th>
+                            <th>服务类型</th>
+                            <th>住房面积（㎡）</th>
+                            <th>用户类别</th>
+                            <th>居住人数</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="${rid}$" class="mengular-template reserve-list-template">
+                            <td>${createDate}$</td>
+                            <td class="reserve-list-name">${name}$</td>
+                            <td>${telephone}$</td>
+                            <td>${address}$</td>
+                            <td>${service}$</td>
+                            <td>${area}$</td>
+                            <td>${user}$</td>
+                            <td>${number}$</td>
+                            <td class="reserve-list-remove"><i class="fa fa-lg fa-trash-o text-danger"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </body>
+</html>

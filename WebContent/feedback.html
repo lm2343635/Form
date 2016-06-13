@@ -7,6 +7,10 @@
 		<link href="static/css/weui.min.css" rel="stylesheet">
 		<link href="static/css/font-awesome.min.css" rel="stylesheet">
 		<link href="static/css/style.css" rel="stylesheet">
+		<script src="static/js/jquery.min.js"></script>
+		<script src="dwr/engine.js" ></script>
+        <script src="dwr/interface/FeedbackManager.js"></script>
+		<script src="static/js/feedback.js"></script>
 	</head>
 	<body>
 		<div class="container" id="container">
@@ -19,7 +23,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="text">
+			                <input id="feedback-name" class="weui_input" type="text">
 			            </div>
 			        </div>
 			    </div>
@@ -27,7 +31,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="number" pattern="[0-9]*">
+			                <input id="feedback-telephone" class="weui_input" type="number" pattern="[0-9]*">
 			            </div>
 			        </div>
 			    </div>
@@ -35,7 +39,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="text">
+			                <input id="feedback-address" class="weui_input" type="text">
 			            </div>
 			        </div>
 			    </div>
@@ -43,7 +47,7 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <input class="weui_input" type="text">
+			                <input id="feedback-device" class="weui_input" type="text">
 			            </div>
 			        </div>
 			    </div>
@@ -51,12 +55,12 @@
 			    <div class="weui_cells weui_cells_form">
 			        <div class="weui_cell">
 			            <div class="weui_cell_bd weui_cell_primary">
-			                <textarea class="weui_textarea" rows="3"></textarea>
+			                <textarea id="feedback-message" class="weui_textarea" rows="3"></textarea>
 			            </div>
 			        </div>
 			    </div>
 			    <div class="weui_btn_area">
-			        <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips">确定</a>
+			        <button id="feedback-submit" class="weui_btn weui_btn_primary">确定</button>
 			    </div>
 			</div>
 		</div>

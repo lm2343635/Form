@@ -8,6 +8,11 @@ import com.xwkj.form.domain.Feedback;
 
 public class FeedbackDaoHibernate extends PageHibernateDaoSupport<Feedback> implements FeedbackDao {
 
+	public FeedbackDaoHibernate() {
+		super();
+		setClass(Feedback.class);
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Feedback> find() {
